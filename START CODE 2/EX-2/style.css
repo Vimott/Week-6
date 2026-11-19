@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+    background-color: #333333;
+    border-top: 2px solid white;
+    color: white;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.links {
+    display: flex;
+    gap: 24px;
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+}
+
+.links a:hover,
+.links a:focus {
+    text-decoration: underline;
+}
+
+.menu-toggle,
+.menu-button {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        position: relative;
+        flex-wrap: wrap;
+        padding: 18px 24px;
+        border-bottom: 2px solid white;
+    }
+
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+    }
+
+    .menu-button {
+        display: block;
+        margin-left: auto;
+        cursor: pointer;
+        font-size: 28px;
+        line-height: 1;
+    }
+
+    .menu-toggle:focus-visible + .menu-button {
+        outline: 2px solid white;
+        outline-offset: 4px;
+    }
+
+    .links {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+        padding-top: 16px;
+    }
+
+    .links a {
+        padding: 12px 0;
+    }
+
+    .menu-toggle:checked ~ .links {
+        display: flex;
+    }
+}
